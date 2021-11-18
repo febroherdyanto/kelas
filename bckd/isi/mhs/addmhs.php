@@ -13,19 +13,36 @@
         $xwa = trim(stripslashes(htmlspecialchars($_POST['wa'])));
         $xemail = trim(stripslashes(htmlspecialchars($_POST['email'])));
         $xkelas = trim(stripslashes(htmlspecialchars($_POST['kelas'])));
-        $quee = "INSERT INTO mahasiswa (id_mhs, nim, nama_lengkap, no_hp, email, kelas) VALUES (NULL, '$xnim', '$xnama', '$xwa', '$xemail', '$xkelas')";
-        $xque = mysqli_query($xkon, $quee);
-        if($xque == TRUE){
-          echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong><i class="bi-check-circle"></i> Sukses !</strong> Data kamu berhasil diinput.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>';
-        }else{
-          echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong><i class="bi-x-circle"></i> Gagal !</strong> Data kamu gagal diinput.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>'.mysqli_error($xkon);
-        }
+
+        $ceknim = "select * from mahasiswa where nim=$xnim";
+        $qceknim = mysqli_query($xkon, $ceknim);
+        $qdd = mysqli_fetch_array($qceknim);
+          $onim = $qdd['nim'];
+          $onama = $qdd['nama_lengkap'];
+          if($xnim == $onim){
+            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <h4 class="alert-heading"><strong><i class="bi-x-circle"></i> Gagal !</strong> Data kamu gagal diinput. </h4>
+              <hr>
+              <p class="mb-0">Nomor Induk Mahasiswa sudah terdaftar dalam Sistem ini. <br>
+              NIM : '.$onim.'<br>
+              Nama Mahasiswa : '.$onama.'</p>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>'.mysqli_error($xkon);
+          }else{
+            $quee = "INSERT INTO mahasiswa (id_mhs, nim, nama_lengkap, no_hp, email, kelas) VALUES (NULL, '$xnim', '$xnama', '$xwa', '$xemail', '$xkelas')";
+            $xque = mysqli_query($xkon, $quee);
+            if($xque == TRUE){
+              echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong><i class="bi-check-circle"></i> Sukses !</strong> Data kamu berhasil diinput.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+            }else{
+              echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong><i class="bi-x-circle"></i> Gagal !</strong> Data kamu gagal diinput.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>'.mysqli_error($xkon);
+            }
+          }
       }
 
       ?>
@@ -66,12 +83,12 @@
           <label for="floatingInput">Kelas *</label>
         <div class="form-check">
           <label class="form-check-label" for="flexRadioDefault1">
-            <input class="form-check-input" type="radio" name="kelas" id="kelas" value="YA" checked> TI.20.B.1
+            <input class="form-check-input" type="radio" name="kelas" id="kelas" value="YA"> TI.20.B.1
           </label>
         </div>
         <div class="form-check">
           <label class="form-check-label" for="flexRadioDefault2">
-            <input class="form-check-input" type="radio" name="kelas" id="kelas" value="TIDAK"> Kelas Lain
+            <input class="form-check-input" type="radio" name="kelas" id="kelas" value="TIDAK" checked> Kelas Lain
           </label>
         </div>
         </div>

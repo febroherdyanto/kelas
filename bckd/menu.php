@@ -19,9 +19,9 @@
       </a>
     </li>
     <li>
-      <a href="./map.html">
-        <i class="nc-icon nc-pin-3"></i>
-        <p>Maps</p>
+      <a href="./index.php?halaman=Peminjaman-Uang">
+        <i class="icon-usd"></i>
+        <p>Peminjaman Uang Kas</p>
       </a>
     </li>
     <li>
