@@ -7,6 +7,8 @@
                 $sel = mysqli_query($xkon, "select * from k_kas where id_kas=1");
                 while($xd = mysqli_fetch_array($sel)){
                 $jml_kas = $xd['jml_kas'];
+                $jago = $xd['jago'];
+                $qris = $xd['qris'];
                 $last_update = $xd['last_update'];
                 $update_by = $xd['update_by'];
 
@@ -27,12 +29,19 @@
                                 <div class="card-body">
                                 <p class="mb-2">Total Uang Kas</p>
                                 <p class="fs-30 mb-2"><?php echo buatRupiah($jml_kas) ?></p>
-                                <p><i>Terakhir diperbarui : <?php echo date('d F Y', strtotime($last_update));  ?></i><br>
-                                Oleh : <?php 
-                                $qc2 = mysqli_query($xkon, "select nama_lengkap from mahasiswa where nim='$update_by'");
-                                while($qqc2 = mysqli_fetch_array($qc2)){
-                                    echo $qqc2['nama_lengkap'];
-                                } ?></p>
+                                <p>
+                                  Rincian : <br>
+                                  <ul>
+                                    <li>Saldo Bank Jago : <?php echo buatRupiah($jago) ?></li>
+                                    <li>Saldo QRIS : <?php echo buatRupiah($qris) ?></li>
+                                  </ul>
+                                  <i>Terakhir diperbarui : <?php echo date('d F Y', strtotime($last_update));  ?></i><br>
+                                  Oleh : <?php 
+                                  $qc2 = mysqli_query($xkon, "select nama_lengkap from mahasiswa where nim='$update_by'");
+                                  while($qqc2 = mysqli_fetch_array($qc2)){
+                                      echo $qqc2['nama_lengkap'];
+                                  } ?>
+                                </p>
                                 </div>
                             </div>
                         </div>
