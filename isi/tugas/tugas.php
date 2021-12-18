@@ -42,7 +42,7 @@
                             <td style="text-align: center;"><?php echo $xd['due_time']; ?></td>
                             <td style="text-align: center;"><?php if($date_now > $xd['due_date']){ echo "TIDAK AKTIF"; }else{ 
                                         //AKAH MASIH BISA DENGAN JAM ? 
-                                          if($time_now > $xd['due_time']){
+                                          if($time_now < $xd['due_time']){
                                             echo "JAM SELESAI";
                                           }else{?>
                                             <a href="index.php?halaman=Upload-Jawaban&xid=<?php echo $xd['id_tugas']; ?>">

@@ -109,7 +109,7 @@ include 'xcon.php';?>
                   <div class="preview-icon bg-info">
                     <i class="ti-user mx-0"></i>
                   </div>
-                </div>con
+                </div>
                 <div class="preview-item-content">
                   <h6 class="preview-subject font-weight-normal">New user registration</h6>
                   <p class="font-weight-light small-text mb-0 text-muted">
@@ -121,15 +121,14 @@ include 'xcon.php';?>
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/face28.jpg" alt="profile"/>
+              <img src="images/faces/face.png" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
+              <a class="dropdown-item" data-toggle="modal" data-target="#modalLogin">
                 <i class="ti-settings text-primary"></i>
-                Settings  </head>
-  <body>
+                Login 
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="xlogout.php">
                 <i class="ti-power-off text-primary"></i>
                 Logout
               </a>
@@ -277,6 +276,30 @@ include 'xcon.php';?>
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
+
+  <!-- ===================================== MODAL LOGIN PAGE =========================== -->
+  <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Login Page</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <?php include "xlogin.php"; ?>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ===================================== END MODAL LOGIN PAGE =========================== -->
+
+
+
 </body>
 
 </html>

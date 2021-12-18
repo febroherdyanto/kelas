@@ -38,7 +38,6 @@
                         </div>
                     </div>
                   </p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptates saepe, enim consequatur commodi cumque recusandae, minima modi necessitatibus accusamus repellendus porro vel culpa aperiam officiis vitae incidunt, hic voluptate eligendi pariatur ratione quo doloribus eos? Assumenda distinctio fugit provident ratione, optio dignissimos hic impedit dolorum quaerat ipsam modi error, totam deserunt aperiam laudantium nihil laboriosam. Voluptatum dolor rerum laboriosam, sapiente error aliquam. Omnis consequatur minima commodi sapiente, voluptatum nobis rerum voluptas? Nulla nisi molestiae esse ipsa doloribus, quisquam delectus tempora cum voluptas vitae unde ullam? Vel repellat laborum ipsum ducimus fugit ratione eligendi, ullam sequi libero dolorem culpa cum?
                 </div>
               </div>
             </div>
