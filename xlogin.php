@@ -64,7 +64,7 @@ if(isset($_POST['submit'])){
         echo    '<div class="col-md-12 stretch-card transparent">
                     <div class="card card-light-danger">
                         <div class="card-header">
-                            <strong><i class="fa fa-exclamation-triangle"></i> GAGAL LOGIN !</strong> <br> Pastikan Username dan Password Benar
+                            <strong><i class="fa fa-exclamation-triangle"></i> LOGIN GAGAL !</strong> <br> Pastikan Username dan Password Benar
                         </div>
                     </div>
                 </div>'.mysqli_error($xkon);

@@ -71,7 +71,7 @@
 
   <?php 
   //================================================== TAMPILAN MENU KETUA =========================================== //
-  }else if($_SESSION['level'] == "bendahara"){ ?>
+  }else if($_SESSION['level'] == "ketua"){ ?>
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="index.php">
@@ -258,7 +258,7 @@
         </ul>
   <?php
   //================================================== TAMPILAN MENU BENDAHARA =========================================== //
-  }else if($_SESSION['level'] == "ketua"){ ?>
+  }else if($_SESSION['level'] == "keuangan"){ ?>
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="index.php">
