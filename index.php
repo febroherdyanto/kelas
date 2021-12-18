@@ -123,16 +123,31 @@ include 'xcon.php';?>
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="images/faces/face.png" alt="profile"/>
             </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item" data-toggle="modal" data-target="#modalLogin">
-                <i class="ti-settings text-primary"></i>
-                Login 
-              </a>
-              <a class="dropdown-item" href="xlogout.php">
-                <i class="ti-power-off text-primary"></i>
-                Logout
-              </a>
-            </div>
+            <?php session_start();
+            //================================================== TAMPILAN MENU ADMIN =========================================== //
+            if($_SESSION['level'] == True){ ?>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item" href="index.php?halaman=Update-Profile">
+                  <i class="ti-settings text-primary"></i>
+                  Update Password 
+                </a>
+                <a class="dropdown-item" href="xlogout.php">
+                  <i class="ti-power-off text-primary"></i>
+                  Logout
+                </a>
+              </div>
+            <?php }else{ ?>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                <a class="dropdown-item" data-toggle="modal" data-target="#modalLogin">
+                  <i class="ti-settings text-primary"></i>
+                  Login 
+                </a>
+                <a class="dropdown-item" href="xlogout.php">
+                  <i class="ti-power-off text-primary"></i>
+                  Logout
+                </a>
+              </div>
+            <?php } ?>
           </li>
           <li class="nav-item nav-settings d-none d-lg-flex">
             <a class="nav-link" href="#">
@@ -227,6 +242,8 @@ include 'xcon.php';?>
             require 'isi/poll/showask.php';
           }else if($hal == 'Ikuti-Polling'){
             require 'isi/poll/vote.php';
+          }else if($hal == 'Update-Profile'){
+            require 'isi/profile.php';
           }
 
           else{
