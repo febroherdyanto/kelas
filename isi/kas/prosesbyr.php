@@ -1,3 +1,17 @@
+<div class="row">
+    <div class="col-md-12 mb-4 stretch-card transparent">
+        <div class="card card-tale">
+            <div class="card-body" style="align-items: center;">
+                <div class="d-flex justify-content-center">
+                    <img src="images/maintenance.png" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php /*
+
 <?php
 $xid_tahun = stripslashes(htmlspecialchars($_GET['tahun']));
 $xnim = stripslashes(htmlspecialchars($_GET['nim']));
@@ -307,3 +321,6 @@ if($qiniput == TRUE){
 </div>
     </div>
 </div>
+
+*/ 
+?>

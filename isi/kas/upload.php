@@ -1,17 +1,18 @@
 <?php
-$xiddet = stripslashes(htmlspecialchars($_GET['xid']));
+$xid_tahun = stripslashes(htmlspecialchars($_GET['tahun']));
+$xnim = stripslashes(htmlspecialchars($_GET['nim']));
 
-$qdetail = mysqli_query($xkon, "select * from k_detail where id_detail=$xiddet");
-while($qqdet = mysqli_fetch_array($qdetail)){
-    $xid_mhs = $qqdet['id_mhs'];
-    $xid_tahun = $qqdet['id_tahun'];
+$ceknim = mysqli_query($xkon, "select id_mhs, nim, nama_lengkap from mahasiswa where nim=$xnim");
+while($qceknim = mysqli_fetch_array($ceknim)){
+    $cek_idmhs = $qceknim['id_mhs'];
+    $cek_namalengkap = $qceknim['nama_lengkap'];
+    $ceknim = $qceknim['nim'];
 
-    $ceknim = mysqli_query($xkon, "select nim, nama_lengkap from mahasiswa where id_mhs=$xid_mhs");
-    while($qceknim = mysqli_fetch_array($ceknim)){
-        $cek_nim = $qceknim['nim'];
-        $cek_namalengkap = $qceknim['nama_lengkap'];
-
+    $qr = mysqli_query($xkon, "select * from k_detail where id_mhs=$cek_idmhs and id_tahun=$xid_tahun"); 
+    $qrr = mysqli_fetch_assoc($qr); 
+        $xiddet = $qrr['id_detail'];
 ?>
+ 
 
 
 
@@ -28,25 +29,36 @@ while($qqdet = mysqli_fetch_array($qdetail)){
                     <div class="col-md-12 mb-4 stretch-card transparent">
                         <div class="card card-tale">
                             <div class="card-body">
-                                <p class="fs-30 mb-2" style="text-align: center"><b>Upload Bukti Pembayaran Uang Kas</b><br></p>
+                                <p class="fs-30 mb-2" style="text-align: center"><b>Proses Pembayaran Uang Kas</b><br></p>
                                 <p class="mb-2">
-                                    <br><h4>HALO, <?php echo $cek_namalengkap; ?> (<?php echo $cek_nim; ?>)</h4>
+                                    <br><h4>HALO, <?php echo $cek_namalengkap; ?> (<?php echo $ceknim; ?>)</h4>
 
-                                    Silahkan lakukan pembayaran pada QRIS dibawah ini, dan jangan lupa untuk upload bukti bayar agar dapat divalidasi oleh Bendahara Kelas.
+                                    Silahkan lakukan pembayaran melalui Bank Jago dibawah ini, dan jangan lupa untuk upload bukti bayar agar dapat divalidasi oleh Bendahara Kelas.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-
+<?php } ?>
 
                 </p>
 
                 <div class="row">
-                    <div class="col-lg-6">
-                        <img src="images/qris-kas.jpeg" width="350px" height="500px"> 
-                        <a href="QRIS_TI20B1.jpeg" target="_blank"><button class="btn btn-info mr-2"><i class="fa fa-download"></i> Download QRIS</button></a>
+                    <div class="col-lg-5">
+                        
+                    <div class="col-md-12 stretch-card transparent">
+                        <div class="card card-light-blue">
+                            <div class="card-body">
+                            <p class="mb-4">Details : </p>
+                            <p class="fs-30 mb-2" style="font-weight: bold;"><i class="fa fa-building"></i> BANK JAGO</p>
+                            <hr>
+                            <p><i class="fa fa-credit-card"></i> Nomor Rekening : <b>100331271322</b>
+                            <br>
+                            <i class="fa fa-user"></i> Atasnama : Miftahu Rizkiyah (Kantong Bersama : <b>KAS TI.20.B.1</b>)</p>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                     <div class="col-lg-6">
 
@@ -111,7 +123,9 @@ if(isset($_POST['submit'])){
                                     <textarea name="detail" class="form-control" placeholder="Berikan Keterangan mengenai pembayaran"></textarea>
                                 </div>
                             </div>
-                            <button type="submit" name="submit" class="btn btn-primary mr-2"><i class="fa fa-save"></i> Upload</button>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" name="submit" class="btn btn-info mr-2"><i class="fa fa-save"></i> Upload</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -121,4 +135,4 @@ if(isset($_POST['submit'])){
     </div>
 </div>
 
-<?php } } ?>
+<?php ?>

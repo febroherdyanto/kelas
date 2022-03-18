@@ -37,9 +37,12 @@ function showUser(str) {
                         </form>
                     </div>
                     <div class="col-sm-3">
-                      <button class="btn btn-info mr-2" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-download"></i> Download QRIS</button></div>
+                      <!--
+                      <button class="btn btn-info mr-2" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-download"></i> Download QRIS</button>
+                      -->
+                    </div>
                 </div>
-                <div id="txtHint"><i>Data akan muncul ketika Anda memilih Tahun Pembayaran</i></div>
+                <div id="txtHint"><i>Data akan muncul ketika Anda memilih Tahun Pembayaran...</i></div>
         </div>
     </div>
 </div>
