@@ -1,13 +1,12 @@
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="row">
-                <div class="col-12 col-xl-8 mb-0 mb-xl-0">
+                <div class="col-12 col-xl-12">
                   <h3 class="font-weight-bold">Selamat Datang <?php echo $_SESSION['nama_lengkap']." - ".$_SESSION['level']; ?> di Sistem Informasi Kelas TI.20.B.1</h3>
                 </div>
               </div>
             </div>
           </div>
-
           <?php
                     $hariini = date("m-d");
                     $cekultah = mysqli_query($xkon, "select nim, nama_lengkap from mahasiswa where month(birthday)=month(now()) and day(birthday)=day(now());");
@@ -18,14 +17,26 @@
           <div class="row">
             <div class="col-md-12 transparent">
               <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">HAPPY BIRTHDAY <?php echo ucwords($namaultah); ?> !</h4>
+                <h3 class="alert-heading">HAPPY BIRTHDAY <?php echo ucwords($namaultah); ?> !</h3>
+                <hr>
                 <p style="font-weight: bold;">Aww yeah, It's time to party! We hope your day is as special as you are, and the year ahead even better still. Happy birthday!</p>
                 </p>
               </div>
             </div>
           </div>
-
           <?php } ?>
+
+          <div class="row">
+            <div class="col-md-12 transparent">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong><i class="fa fa-bullhorn"></i> PENGUMUMAN !</strong> <hr>
+                [UANG KAS] : Fitur pembayaran uang kas melalui QRIS saat ini tidak dapat dilakukan sementara waktu. Silahkan melakukan pembayaran uang kas melalui <b>Bank Jago</b> 
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            </div>
+          </div>
 
           <div class="row">
             <div class="col-md-6 grid-margin stretch-card">
