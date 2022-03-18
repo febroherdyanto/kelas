@@ -8,16 +8,24 @@
             </div>
           </div>
 
+          <?php
+                    $hariini = date("m-d");
+                    $cekultah = mysqli_query($xkon, "select nim, nama_lengkap from mahasiswa where month(birthday)=month(now()) and day(birthday)=day(now());");
+                    while($arrultah = mysqli_fetch_array($cekultah)){ 
+                      $nimultah = $arrultah['nim'];
+                      $namaultah = ucwords($arrultah['nama_lengkap']); ?>
+
           <div class="row">
-          <div class="col-md-12 mb-0 stretch-card transparent">
-            <div class="alert alert-success" role="alert">
-              <h4 class="alert-heading">Happy Birthday !</h4>
-              <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-              <hr>
-              <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+            <div class="col-md-12 transparent">
+              <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">HAPPY BIRTHDAY <?php echo ucwords($namaultah); ?> !</h4>
+                <p style="font-weight: bold;">Aww yeah, It's time to party! We hope your day is as special as you are, and the year ahead even better still. Happy birthday!</p>
+                </p>
+              </div>
             </div>
           </div>
-          </div>
+
+          <?php } ?>
 
           <div class="row">
             <div class="col-md-6 grid-margin stretch-card">
