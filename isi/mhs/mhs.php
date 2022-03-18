@@ -24,16 +24,16 @@
                       <tbody>
                         <tr>
                         <?php
-
-                        $sel = mysqli_query($xkon, "select * from mahasiswa");
+                        $no = 1;
+                        $sel = mysqli_query($xkon, "select * from mahasiswa order by nim asc");
                         while($xd = mysqli_fetch_array($sel)){
                         ?>
 
                             <tr>
-                            <td><?php echo $xd['id_mhs']; ?></td>
-                            <td><?php echo $xd['nim']; ?></td>
-                            <td><?php echo $xd['nama_lengkap']; ?></td>
-                            <td><?php if($xd['kelas'] == 'YA'){ echo "TI.20.B.1"; }else{ echo "Kelas Lain";} ?></td>
+                              <td><?php echo $no++; ?></td>
+                              <td><?php echo $xd['nim']; ?></td>
+                              <td><?php echo $xd['nama_lengkap']; ?></td>
+                              <td><?php if($xd['kelas'] == 'YA'){ echo "TI.20.B.1"; }else{ echo "Kelas Lain";} ?></td>
 
                             </tr>
 
