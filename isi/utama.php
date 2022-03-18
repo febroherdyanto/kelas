@@ -29,7 +29,7 @@
           <div class="row">
             <div class="col-md-12 transparent">
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              <strong><i class="fa fa-bullhorn"></i> PENGUMUMAN !</strong> <hr>
+              <strong><i class="fa fa-bullhorn"></i> PENGUMUMAN !</strong> <br>
                 [UANG KAS] : Fitur pembayaran uang kas melalui QRIS saat ini tidak dapat dilakukan sementara waktu. Silahkan melakukan pembayaran uang kas melalui <b>Bank Jago</b> 
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
