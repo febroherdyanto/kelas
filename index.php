@@ -237,6 +237,8 @@ include 'xcon.php';?>
             require 'isi/poll/showask.php';
           }else if($hal == 'Ikuti-Polling'){
             require 'isi/poll/vote.php';
+          }else if($hal == 'Hasil-Polling'){
+            require 'isi/poll/result.php';
           }else if($hal == 'Update-Profile'){
             require 'isi/profile.php';
           }

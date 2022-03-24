@@ -122,7 +122,7 @@ if($getask == 'true'){
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Keterangan (optional)</label>
                     <div class="col-sm-9">
-                        <input type="text" name="detail" class="form-control" placeholder="Masukkan Detail / Clue Pertanyaan" required>
+                        <input type="text" name="detail" class="form-control" placeholder="Masukkan Detail / Clue Pertanyaan">
                     </div>
                 </div>
                 

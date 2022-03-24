@@ -10,7 +10,7 @@
                 $xtgl_mulai = trim(stripslashes(htmlspecialchars($_POST['tgl_mulai'])));
                 $xtgl_selesai = trim(stripslashes(htmlspecialchars($_POST['tgl_selesai'])));
 
-                $qinsertpoll = "INSERT INTO p_polling (id_poll, judul, tgl_mulai, tgl_selesai)values (NULL, '$xjudul', '$xtgl_mulai', '$xtgl_selesai')";
+                $qinsertpoll = "INSERT INTO p_polling (judul, tgl_mulai, tgl_selesai)values ('$xjudul', '$xtgl_mulai', '$xtgl_selesai')";
                 $xproses = mysqli_query($xkon, $qinsertpoll);
                 if($xproses == TRUE){
                     echo '<div class="col-md-12 stretch-card transparent">
