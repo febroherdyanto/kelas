@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
                     $_SESSION['username'] = $xusername;
                     $_SESSION['nim'] = $nim;
                     $_SESSION['nama_lengkap'] = $nama_lengkap;
-                    $_SESSION['level'] = "sekretaris";
+                    $_SESSION['level'] = "bendahara";
                     header("location:index.php");
 
                 }else{

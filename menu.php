@@ -258,7 +258,7 @@
         </ul>
   <?php
   //================================================== TAMPILAN MENU BENDAHARA =========================================== //
-  }else if($_SESSION['level'] == "keuangan"){ ?>
+  }else if($_SESSION['level'] == "bendahara"){ ?>
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="index.php">
