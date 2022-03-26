@@ -1,9 +1,11 @@
 <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Download Data Jawaban Tugas <?php echo $_SERVER['DOCUMENT_ROOT']; ?></h4>
+                  <h4 class="card-title">Download Data Jawaban Tugas</h4>
                   <p class="card-description">
-                     
+                     <a href="<?php echo $_SERVER['DOCUMENT_ROOT'].'/drive/'; ?>" target="_blank">Linkk</a>
+                     <br>
+                     <?php echo $_SERVER[HTTP_HOST].'/drive/'; ?>
                   </p>
                   <div class="table-responsive">
                     <table class="table table-striped" id="tabelku">
