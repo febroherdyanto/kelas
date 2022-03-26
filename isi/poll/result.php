@@ -13,43 +13,46 @@ while($dpol = mysqli_fetch_array($qcekpol)){
             </p>
             
             <div class='table-responsive'>
+            <?php
+            $qtanya = mysqli_query($xkon, "select * from p_tanya where id_poll=$xidpol order by no_tanya ASC ");
+            while($tanya = mysqli_fetch_assoc($qtanya)){
+                $id_tanya = $tanya['id_tanya'];
+                $pertanyaan = $tanya['pertanyaan']; 
+                
+                echo "<h6>$pertanyaan</h6>";
+                ?>
+
                 <table class="table table-striped" id="tabelku">
                     <thead>
                         <tr style="font-weight: bold;">
                             <td>No</td>
-                            <td>Nama Polling</td>
-                            <td>Tanggal Mulai</td>
-                            <td>Tanggal Berakhir</td>
-                            <td>Status</td>
+                            <td>Nama Opsi</td>
+                            <td>Total Vote</td>
                             <td>Aksi</td>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $no = 0;
-                        $date_now = date("Y-m-d");
-                        $qpol = mysqli_query($xkon, "select * from p_polling order by id_poll DESC");
-                        while($dpol = mysqli_fetch_array($qpol)){
-                            $no++
-                        ?>
+                            $no = 1;
+                            $qopt = mysqli_query($xkon, "select * from p_opsi where id_tanya=$id_tanya");
+                            while($opt = mysqli_fetch_assoc($qopt)){
+                                $id_opsi = $opt['id_opsi'];
+                                $opsi = $opt['opsi']; ?>
                         <tr>
-                            <td><?php echo $no; ?></td>
-                            <td><?php echo $dpol['judul']; ?></td>
-                            <td><?php echo date("d F Y", strtotime($dpol['tgl_mulai'])); ?></td>
-                            <td><?php echo date("d F Y", strtotime($dpol['tgl_selesai'])); ?></td>
-                            <td> 
-                                <?php if($date_now > $dpol['tgl_selesai']){ echo '<b style="color: red; font-weight: bold;">TIDAK AKTIF</b>' ; }else{ echo "<b>AKTIF</b>"; } ?>
+                            <td><?php echo $no++; ?></td>
+                            <td><?php echo $opsi; ?></td>
+                            <td><?php 
+                                $qjwb = mysqli_query($xkon, "select * from p_jawaban where id_opsi=$id_opsi");
+                                $jwb = mysqli_num_rows($qjwb);
+                                    echo $jwb;
+                            ?>
                             </td>
-                            <td>
-                                <?php if($date_now > $dpol['tgl_selesai']){ echo ""; }else{ ?>
-                                <a type="button" class="btn btn-sm btn-success" href="index.php?halaman=Ikuti-Polling&xid=<?php echo $dpol['id_poll']; ?>"> <i class="fa fa-pencil"></i> Ikuti Polling </a> |
-                                <?php } ?>
-                                 LIHAT HASIL
-                            </td>
+                            <td> <i>Feature under maintenance</i></td>
                         </tr>
-                        <?php } ?>
+                        <?php }  ?>
                     </tbody>
                 </table>
+            <?php } ?>
             </div>
 
             

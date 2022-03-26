@@ -22,7 +22,7 @@
                       <tbody>
                         <?php
                             error_reporting(0);
-                        $sel = mysqli_query($xkon, "select * from k_upload");
+                        $sel = mysqli_query($xkon, "select * from k_upload order by id_upload DESC");
                         $no = 1;
                         while($xd = mysqli_fetch_array($sel)){
                             $xid_upload = $xd['id_upload'];
