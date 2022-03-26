@@ -239,6 +239,8 @@ include 'xcon.php';?>
             require 'isi/poll/vote.php';
           }else if($hal == 'Hasil-Polling'){
             require 'isi/poll/result.php';
+          }else if($hal == 'Delete-Polling'){
+            require 'isi/poll/del.php';
           }else if($hal == 'Update-Profile'){
             require 'isi/profile.php';
           }

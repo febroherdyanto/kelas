@@ -37,7 +37,8 @@
                                 <?php if($date_now > $dpol['tgl_selesai']){ echo "TIDAK AKTIF"; }else{ echo "AKTIF"; } ?>
                             </td>
                             <td>
-                                <a href="index.php?halaman=Lihat-Pertanyaan&xid=<?php echo $dpol['id_poll']; ?>">Lihat Pertanyaan</a>
+                                <a href="index.php?halaman=Lihat-Pertanyaan&xid=<?php echo $dpol['id_poll']; ?>"><i class="fa fa-sitemap"></i> View</a> &nbsp; &nbsp;
+                                <a href="index.php?halaman=Delete-Polling&xid=<?php echo $dpol['id_poll']; ?>"><i class="fa fa-trash"></i> Delete</a>
                             </td>
                         </tr>
                         <?php } ?>
