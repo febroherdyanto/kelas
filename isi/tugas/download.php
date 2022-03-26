@@ -44,7 +44,7 @@
                                           }
                                       } ?>
                             </td>
-                            <td style="text-align: center;"><a href="drive/tinyfilemanager.php?p=<?php echo $folder; ?>" target="_blank"><i class="fa fa-eye"></i>  Download Jawaban</a></td>
+                            <td style="text-align: center;"><a href="https://drive.ti20b1.febroherdyanto.id/index.php?p=<?php echo $folder; ?>" target="_blank"><i class="fa fa-eye"></i>  Download Jawaban</a></td>
                             </tr><?php } ?>
                       </tbody>
                     </table>
