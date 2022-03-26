@@ -25,6 +25,7 @@
                         $time_now = time("H:i:s");
                         $no = 1;
                         while($xd = mysqli_fetch_array($sel)){
+                          $folder = $xd['folder'];
                         ?>
 
                             <tr>
@@ -41,7 +42,7 @@
                                           }
                                       } ?>
                             </td>
-                            <td style="text-align: center;"><a href="index.php?halaman=Proses-Download&xid=<?php echo $xd['id_tugas']; ?>"><i class="fa fa-eye"></i>  Download Jawaban</a></td>
+                            <td style="text-align: center;"><a href="drive/tinyfilemanager.php?p=<?php echo $folder; ?>" target="_blank"><i class="fa fa-eye"></i>  Download Jawaban</a></td>
                             </tr><?php } ?>
                       </tbody>
                     </table>

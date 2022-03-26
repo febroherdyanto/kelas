@@ -1,8 +1,8 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
+<ul class="nav">
   <?php session_start();
   //================================================== TAMPILAN MENU ADMIN =========================================== //
   if($_SESSION['level'] == "admin"){ ?>
-        <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="index.php">
               <i class="icon-grid menu-icon"></i>
@@ -24,7 +24,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-            <i class="fa fa-tasks"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-book"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="menu-title">Tugas</span>
               <i class="menu-arrow"></i>
             </a>
@@ -38,7 +38,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-            <i class="ti-money"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="ti-wallet"></i>&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="menu-title">Informasi Kas</span>
               <i class="menu-arrow"></i>
             </a>
@@ -67,12 +67,10 @@
               </ul>
             </div>
           </li>
-        </ul>
 
   <?php 
   //================================================== TAMPILAN MENU KETUA =========================================== //
   }else if($_SESSION['level'] == "ketua"){ ?>
-        <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="index.php">
               <i class="icon-grid menu-icon"></i>
@@ -108,7 +106,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-            <i class="ti-money"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="ti-wallet"></i>&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="menu-title">Informasi Kas</span>
               <i class="menu-arrow"></i>
             </a>
@@ -136,11 +134,9 @@
               </ul>
             </div>
           </li>
-        </ul>
   <?php 
     //================================================== TAMPILAN MENU WAKIL KETUA =========================================== //
   }else if($_SESSION['level'] == "wakil"){ ?>
-        <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="index.php">
               <i class="icon-grid menu-icon"></i>
@@ -176,7 +172,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-            <i class="ti-money"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="ti-wallet"></i>&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="menu-title">Informasi Kas</span>
               <i class="menu-arrow"></i>
             </a>
@@ -204,11 +200,9 @@
               </ul>
             </div>
           </li>
-        </ul>
   <?php 
     //================================================== TAMPILAN MENU SEKRETARIS =========================================== //
   }else if($_SESSION['level'] == "sekretaris"){ ?>
-        <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="index.php">
               <i class="icon-grid menu-icon"></i>
@@ -255,11 +249,9 @@
               </ul>
             </div>
           </li>
-        </ul>
   <?php
   //================================================== TAMPILAN MENU BENDAHARA =========================================== //
   }else if($_SESSION['level'] == "bendahara"){ ?>
-        <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="index.php">
               <i class="icon-grid menu-icon"></i>
@@ -293,7 +285,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-            <i class="ti-money"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="ti-wallet"></i>&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="menu-title">Informasi Kas</span>
               <i class="menu-arrow"></i>
             </a>
@@ -322,11 +314,9 @@
               </ul>
             </div>
           </li>
-        </ul>
   <?php
   //================================================== TAMPILAN MENU MAHASISWA / UMUM =========================================== //
   } else{ ?>
-          <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="index.php">
               <i class="icon-grid menu-icon"></i>
@@ -360,7 +350,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-            <i class="ti-money"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="ti-wallet"></i>&nbsp;&nbsp;&nbsp;&nbsp;
               <span class="menu-title">Informasi Kas</span>
               <i class="menu-arrow"></i>
             </a>
@@ -384,6 +374,6 @@
               </ul>
             </div>
           </li>
-        </ul>
   <?php } ?>
+        </ul>
   </nav>
