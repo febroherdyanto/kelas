@@ -10,12 +10,15 @@ if(isset($_POST['submit'])){
 
     if($cek > 0){
         $data = mysqli_fetch_assoc($querycek);
+            $id_user = $data['id_user'];
+
             $cekmhs = mysqli_query($xkon, "select id_mhs, nim, nama_lengkap from mahasiswa where id_mhs=$data[id_mhs] ");
             while($mhs = mysqli_fetch_array($cekmhs)){
                 $nim = $mhs['nim'];
                 $nama_lengkap = $mhs['nama_lengkap'];
 
                 if($data['level']=="admin"){
+                    $_SESSION['id_user'] = $id_user;
                     $_SESSION['username'] = $xusername;
                     $_SESSION['nim'] = $nim;
                     $_SESSION['nama_lengkap'] = $nama_lengkap;
@@ -23,6 +26,7 @@ if(isset($_POST['submit'])){
                     header("location:index.php");
 
                 }else if($data['level'] == "ketua"){
+                    $_SESSION['id_user'] = $id_user;
                     $_SESSION['username'] = $xusername;
                     $_SESSION['nim'] = $nim;
                     $_SESSION['nama_lengkap'] = $nama_lengkap;
@@ -30,6 +34,7 @@ if(isset($_POST['submit'])){
                     header("location:index.php");
 
                 }else if($data['level'] == "wakil"){
+                    $_SESSION['id_user'] = $id_user;
                     $_SESSION['username'] = $xusername;
                     $_SESSION['nim'] = $nim;
                     $_SESSION['nama_lengkap'] = $nama_lengkap;
@@ -37,6 +42,7 @@ if(isset($_POST['submit'])){
                     header("location:index.php");
                     
                 }else if($data['level'] == "sekretaris"){
+                    $_SESSION['id_user'] = $id_user;
                     $_SESSION['username'] = $xusername;
                     $_SESSION['nim'] = $nim;
                     $_SESSION['nama_lengkap'] = $nama_lengkap;
@@ -44,10 +50,19 @@ if(isset($_POST['submit'])){
                     header("location:index.php");
 
                 }else if($data['level'] == "bendahara"){
+                    $_SESSION['id_user'] = $id_user;
                     $_SESSION['username'] = $xusername;
                     $_SESSION['nim'] = $nim;
                     $_SESSION['nama_lengkap'] = $nama_lengkap;
                     $_SESSION['level'] = "bendahara";
+                    header("location:index.php");
+
+                }else if($data['level'] == "sport"){
+                    $_SESSION['id_user'] = $id_user;
+                    $_SESSION['username'] = $xusername;
+                    $_SESSION['nim'] = $nim;
+                    $_SESSION['nama_lengkap'] = $nama_lengkap;
+                    $_SESSION['level'] = "sport";
                     header("location:index.php");
 
                 }else{
