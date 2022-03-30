@@ -1,5 +1,5 @@
 <?php 
-$slevel = $_SESSION['level'];
+$id_user = $_SESSION['id_user'];
 ?>
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
@@ -9,7 +9,7 @@ $slevel = $_SESSION['level'];
                     <?php
                         if(isset($_POST['submit'])){
                             $password = trim(addslashes(htmlspecialchars("px".md5("xpass-".$_POST['xpassword']))));
-                            $query = mysqli_query($xkon, "update xuser set password='$password' where level='$slevel' ");
+                            $query = mysqli_query($xkon, "update xuser set password='$password' where id_user='$id_user' ");
 
                             if($query == True){
                                 echo    '<div class="col-md-12 stretch-card transparent">
