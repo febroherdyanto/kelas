@@ -3,21 +3,23 @@
               <div class="row">
                 <div class="col-12 col-xl-12">
                   <?php
-                    if($_SESSION['admin']){
-                      $level = " - Administrator Web";
-                    }else if($_SESSION['ketua']){
-                      $level = " - Ketua Kelas";
-                    }else if($_SESSION['wakil']){
-                      $level = " - Wakil Ketua Kelas";
-                    }else if($_SESSION['sekretaris']){
-                      $level = " - Sekretaris Kelas";
-                    }else if($_SESSION['bendahara']){
-                      $level = " - Bendahara Kelas";
-                    }else if($_SESSION['sport']){
-                      $level = " - Koordinator Olahraga Kelas";
+                    if($_SESSION['level'] == 'admin'){
+                      $leveln = " - Administrator Web";
+                    }else if($_SESSION['level'] == 'ketua'){
+                      $leveln = " - Ketua Kelas";
+                    }else if($_SESSION['level'] == 'wakil'){
+                      $leveln = " - Wakil Ketua Kelas";
+                    }else if($_SESSION['level'] == 'sekretaris'){
+                      $leveln = " - Sekretaris Kelas";
+                    }else if($_SESSION['level'] == 'bendahara'){
+                      $leveln = " - Bendahara Kelas";
+                    }else if($_SESSION['level'] == 'sport'){
+                      $leveln = " - Koordinator Olahraga Kelas";
+                    }else{
+                      $leveln = "";
                     }
                   ?>
-                  <h3 class="font-weight-bold">Selamat Datang <?php echo $_SESSION['nama_lengkap'].$level; ?> di Sistem Informasi Kelas TI.20.B.1</h3>
+                  <h3 class="font-weight-bold">Selamat Datang <?php echo $_SESSION['nama_lengkap'].$leveln; ?> di Sistem Informasi Kelas TI.20.B.1</h3>
                 </div>
               </div>
             </div>
