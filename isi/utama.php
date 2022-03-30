@@ -19,7 +19,7 @@
                       $leveln = "";
                     }
                   ?>
-                  <h3 class="font-weight-bold">Selamat Datang <?php echo $_SESSION['nama_lengkap'].$leveln; ?> di Sistem Informasi Kelas TI.20.B.1</h3>
+                  <h3 class="font-weight-bold">Selamat Datang <?php echo ucwords($_SESSION['nama_lengkap']).$leveln; ?> di Sistem Informasi Kelas TI.20.B.1</h3>
                 </div>
               </div>
             </div>

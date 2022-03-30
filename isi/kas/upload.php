@@ -53,9 +53,9 @@ while($qceknim = mysqli_fetch_array($ceknim)){
                             <p class="mb-4">Details : </p>
                             <p class="fs-30 mb-2" style="font-weight: bold;"><i class="fa fa-building"></i> BANK JAGO</p>
                             <hr>
-                            <p><i class="fa fa-credit-card"></i> Nomor Rekening : <b>100331271322</b>
+                            <p><i class="fa fa-credit-card"></i> Nomor Rekening : <b>107618143538</b>
                             <br>
-                            <i class="fa fa-user"></i> Atasnama : Miftahu Rizkiyah (Kantong Bersama : <b>KAS TI.20.B.1</b>)</p>
+                            <i class="fa fa-user"></i> Atasnama : Antini Permatasari (Kantong Bersama : <b>Kas 20 B1</b>)</p>
                             </div>
                         </div>
                     </div>
